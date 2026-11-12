@@ -1,0 +1,992 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    color: #ffffff;
+
+    background:
+        radial-gradient(circle at top left, #263b80 0%, transparent 35%),
+        radial-gradient(circle at bottom right, #4c1d68 0%, transparent 35%),
+        linear-gradient(135deg, #090d1f, #111936 50%, #090d1f);
+
+    background-attachment: fixed;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    text-align: center;
+    padding: 65px 20px 55px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(65, 88, 208, 0.9),
+            rgba(123, 52, 166, 0.85)
+        );
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.header h1 {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+
+    text-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.header p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+
+    margin: 50px auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+}
+
+
+/* =========================================
+   APP CARDS
+========================================= */
+
+.app-card {
+    position: relative;
+
+    padding: 32px;
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.3);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.app-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.section-title {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 28px;
+}
+
+.section-title .icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    font-size: 34px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.18),
+            rgba(255, 255, 255, 0.05)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.section-title h2 {
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+.section-title p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+
+/* =========================================
+   SEARCH FORM
+========================================= */
+
+.search-form {
+    display: flex;
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+.search-form input {
+    flex: 1;
+
+    padding: 15px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 12px;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.search-form input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.search-form input:focus {
+    border-color: #8294ff;
+
+    box-shadow:
+        0 0 0 3px rgba(130, 148, 255, 0.15);
+}
+
+
+/* =========================================
+   SEARCH BUTTON
+========================================= */
+
+.search-form button {
+    padding: 15px 20px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #667eea,
+            #764ba2
+        );
+
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 8px 20px rgba(102, 126, 234, 0.25);
+}
+
+.search-form button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(102, 126, 234, 0.4);
+}
+
+.search-form button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   RESULT BOX
+========================================= */
+
+.result-box {
+    min-height: 230px;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background: rgba(0, 0, 0, 0.18);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================
+   DEFAULT MESSAGE
+========================================= */
+
+.default-message {
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    padding: 70px 10px;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   WEATHER CARD
+========================================= */
+
+.weather-card {
+    text-align: center;
+
+    animation: fadeIn 0.5s ease;
+}
+
+.weather-card h3 {
+    font-size: 25px;
+
+    margin-bottom: 8px;
+}
+
+.weather-condition {
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 16px;
+
+    margin-bottom: 12px;
+}
+
+.temperature {
+    font-size: 58px;
+
+    font-weight: 800;
+
+    margin: 15px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #aebcff
+        );
+
+    /* -webkit-background-clip: text; */
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================
+   WEATHER DETAILS
+========================================= */
+
+.weather-details {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.weather-details div {
+    flex: 1;
+
+    padding: 17px;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition: 0.3s;
+}
+
+.weather-details div:hover {
+    background: rgba(255, 255, 255, 0.12);
+
+    transform: translateY(-3px);
+}
+
+.weather-details span {
+    font-size: 25px;
+}
+
+.weather-details p {
+    margin: 7px 0;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 13px;
+}
+
+.weather-details strong {
+    font-size: 16px;
+}
+
+
+/* =========================================
+   MOVIE GRID
+========================================= */
+
+.movie-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================
+   MOVIE CARD
+========================================= */
+
+.movie-card {
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    animation: fadeIn 0.5s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-7px) scale(1.01);
+
+    box-shadow:
+        0 18px 35px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================
+   MOVIE POSTER
+========================================= */
+
+.movie-card img {
+    width: 100%;
+
+    height: 260px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+.movie-card:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   MOVIE INFO
+========================================= */
+
+.movie-info {
+    padding: 17px;
+}
+
+.movie-info h3 {
+    font-size: 17px;
+
+    line-height: 1.3;
+
+    margin-bottom: 9px;
+
+    color: white;
+}
+
+.movie-info p {
+    color: rgba(255, 255, 255, 0.55);
+
+    margin-bottom: 13px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   MOVIE BUTTON
+========================================= */
+
+.details-button {
+    width: 100%;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #667eea,
+            #764ba2
+        );
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.details-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(102, 126, 234, 0.35);
+}
+
+
+/* =========================================
+   ERROR MESSAGE
+========================================= */
+
+.error-message {
+    text-align: center;
+
+    padding: 50px 15px;
+
+    color: #ff8d8d;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    text-align: center;
+
+    padding: 30px 20px;
+
+    margin-top: 50px;
+
+    background: rgba(0, 0, 0, 0.3);
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 38px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+
+        margin: 30px auto;
+    }
+
+    .app-card {
+        padding: 22px;
+
+        border-radius: 20px;
+    }
+
+    .header {
+        padding: 45px 15px;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .header p {
+        font-size: 15px;
+    }
+
+    .section-title h2 {
+        font-size: 22px;
+    }
+
+    .section-title .icon {
+        width: 55px;
+        height: 55px;
+
+        font-size: 28px;
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+
+    .search-form button {
+        width: 100%;
+    }
+
+    .weather-details {
+        flex-direction: column;
+    }
+
+    .movie-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* ===== IMPORTANT VISIBILITY FIX ===== */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ===== HOME PAGE FIX ===== */
+
+.home-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-content {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1000px;
+    min-height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.choice-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.choice-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 28px;
+    min-height: 150px;
+    border-radius: 22px;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(15px);
+    transition: 0.3s ease;
+}
+
+.choice-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.choice-icon {
+    font-size: 40px;
+    min-width: 65px;
+}
+
+.choice-text h2 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.choice-text p {
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+}
+
+.arrow {
+    margin-left: auto;
+    font-size: 28px;
+}
+
+
+/* ===== PAGE CONTENT FIX ===== */
+
+.page-content {
+    position: relative;
+    z-index: 2;
+    width: 92%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 35px 0 70px;
+}
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.page-heading h1 {
+    font-size: 38px;
+    margin-bottom: 8px;
+}
+
+.page-heading p {
+    color: rgba(255,255,255,0.75);
+}
+
+.big-icon {
+    font-size: 42px;
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+}
+
+
+/* ===== SEARCH BOX FIX ===== */
+
+.weather-box,
+.movie-box {
+    padding: 30px;
+    border-radius: 25px;
+    background: rgba(10,15,35,0.65);
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(18px);
+}
+
+
+/* ===== RESPONSIVE FIX ===== */
+
+@media(max-width: 700px) {
+
+    .choice-container {
+        grid-template-columns: 1fr;
+    }
+
+    .page-heading h1 {
+        font-size: 27px;
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media(max-width: 450px) {
+
+    .movie-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .choice-card {
+        padding: 18px;
+    }
+
+}
+
+/* HOME PAGE SPACING */
+
+.home-footer {
+    margin-top: 65px;
+    padding-bottom: 20px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.choice-container {
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+
+/* FOOTER DESIGN */
+
+.site-footer {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    margin-top: 70px;
+    padding: 25px 15px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 13px;
+    line-height: 2;
+}
+
+/* BACK BUTTON DESIGN */
+
+button.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 23px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(15px);
+    transition: all 0.3s ease;
+}
+
+button.back-button:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    transform: translateX(-5px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+/* RESPONSIVE OVERFLOW FIX */
+
+body {
+    overflow-x: hidden;
+}
+
+.weather-box,
+.movie-box {
+    width: 100%;
+    min-width: 0;
+}
+
+.search-form {
+    width: 100%;
+}
+
+.search-form input {
+    min-width: 0;
+    width: 100%;
+}
+
+.movie-grid {
+    width: 100%;
+}
+
+/* WEATHER DASHBOARD */
+
+.wx-dashboard {
+    width: 100%;
+    padding: 30px;
+    margin-top: 25px;
+    text-align: center;
+    color: white;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+}
+
+/* LOCATION */
+
+.wx-location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.wx-location h2 {
+    font-size: 26px;
+    margin: 0;
+}
+
+/* WEATHER ICON */
+
+.wx-icon {
+    font-size: 65px;
+    margin: 15px 0;
+}
+
+/* TEMPERATURE */
+
+.wx-temperature {
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+    margin: 10px 0;
+}
+
+.wx-temperature span {
+    font-size: 30px;
+    vertical-align: top;
+}
+
+/* WEATHER CONDITION */
+
+.wx-condition {
+    font-size: 18px;
+    color: #c5d2ff;
+    margin: 8px 0;
+}
+
+.wx-caption {
+    font-size: 13px;
+    color: #aab5d3;
+}
+
+/* WEATHER DETAILS */
+
+.wx-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.wx-stat-card {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+
+.wx-stat-icon {
+    font-size: 28px;
+}
+
+.wx-stat-card p {
+    color: #b8c3df;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.wx-stat-card h3 {
+    font-size: 22px;
+    margin: 5px 0;
+    color: white;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 600px) {
+
+    .wx-dashboard {
+        padding: 20px;
+    }
+
+    .wx-location h2 {
+        font-size: 21px;
+    }
+
+    .wx-temperature {
+        font-size: 48px;
+    }
+
+    .wx-stats {
+        grid-template-columns: 1fr;
+    }
+
+}

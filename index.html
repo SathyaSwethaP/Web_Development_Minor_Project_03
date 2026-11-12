@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Explore Hub</title>
+
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
+</head>
+
+<body>
+
+
+    <!-- =================================
+         HOME PAGE
+    ================================== -->
+
+    <section
+        id="homePage"
+        class="page home-page"
+    >
+
+        <div class="home-overlay"></div>
+
+        <div class="home-content">
+
+            <div class="logo">
+                ✦ EXPLORE HUB
+            </div>
+
+            <h1>
+                What would you like
+                <span>to explore?</span>
+            </h1>
+
+            <p class="home-description">
+                Discover the world around you or
+                find your next favorite movie.
+            </p>
+
+
+            <div class="choice-container">
+
+                <!-- Weather Choice -->
+
+                <button
+                    class="choice-card weather-choice"
+                    id="weatherChoice"
+                >
+
+                    <div class="choice-icon">
+                        🌦️
+                    </div>
+
+                    <div class="choice-text">
+
+                        <h2>
+                            Weather
+                        </h2>
+
+                        <p>
+                            Explore current weather
+                            conditions around the world.
+                        </p>
+
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- Movie Choice -->
+
+                <button
+                    class="choice-card movie-choice"
+                    id="movieChoice"
+                >
+
+                    <div class="choice-icon">
+                        🎬
+                    </div>
+
+                    <div class="choice-text">
+
+                        <h2>
+                            Movies
+                        </h2>
+
+                        <p>
+                            Search and discover
+                            amazing movies.
+                        </p>
+
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+            <p class="home-footer">
+                Choose an experience to begin
+            </p>
+
+            <footer class="site-footer">
+                <p>© 2026 Explore Hub</p>
+                <p>Weather & Movie Discovery Platform</p>
+            </footer>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         WEATHER PAGE
+    ================================== -->
+
+    <section
+        id="weatherPage"
+        class="page weather-page hidden"
+    >
+
+        <div class="page-overlay"></div>
+
+        <div class="page-content">
+
+            <button
+                class="back-button"
+                id="weatherBack"
+            >
+                ← Back to Explore
+            </button>
+
+
+            <div class="page-heading">
+
+                <span class="big-icon">
+                    🌦️
+                </span>
+
+                <div>
+
+                    <h1>
+                        Weather Explorer
+                    </h1>
+
+                    <p>
+                        Discover the weather anywhere in the world
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="weather-box">
+
+                <form
+                    id="weatherForm"
+                    class="search-form"
+                >
+
+                    <input
+                        type="text"
+                        id="cityInput"
+                        placeholder="Enter city name..."
+                        autocomplete="off"
+                    >
+
+                    <button type="submit">
+                        🔍 Search
+                    </button>
+
+                </form>
+
+
+                <div
+                    id="weatherResult"
+                    class="result-box"
+                >
+
+                    <div class="empty-state">
+
+                        <div>
+                            🌍
+                        </div>
+
+                        <h3>
+                            Search for a city
+                        </h3>
+
+                        <p>
+                            Get current weather information
+                            instantly.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer class="site-footer">
+            <p>© 2026 Explore Hub</p>
+            <p>Weather Explorer | Discover the world around you</p>
+        </footer>
+
+    </section>
+
+
+
+    <!-- =================================
+         MOVIE PAGE
+    ================================== -->
+
+    <section
+        id="moviePage"
+        class="page movie-page hidden"
+    >
+
+        <div class="page-overlay"></div>
+
+        <div class="page-content movie-content">
+
+            <button
+                class="back-button"
+                id="movieBack"
+            >
+                ← Back to Explore
+            </button>
+
+
+            <div class="page-heading">
+
+                <span class="big-icon">
+                    🎬
+                </span>
+
+                <div>
+
+                    <h1>
+                        Movie Explorer
+                    </h1>
+
+                    <p>
+                        Search, discover and explore movies
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="movie-box">
+
+                <form
+                    id="movieForm"
+                    class="search-form"
+                >
+
+                    <input
+                        type="text"
+                        id="movieInput"
+                        placeholder="Search for a movie..."
+                        autocomplete="off"
+                    >
+
+                    <button type="submit">
+                        🔍 Search
+                    </button>
+
+                </form>
+
+
+                <div
+                    id="movieResult"
+                    class="movie-grid"
+                >
+
+                    <div class="movie-empty">
+
+                        <div>
+                            🎞️
+                        </div>
+
+                        <h3>
+                            Find your next movie
+                        </h3>
+
+                        <p>
+                            Search for your favorite movie
+                            to get started.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer class="site-footer">
+            <p>© 2026 Explore Hub</p>
+            <p>Movie Explorer | Discover your next favorite movie</p>
+        </footer>
+
+    </section>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="./js/navigation.js"></script>
+
+    <script type="module" src="./js/main.js"></script>
+
+</body>
+
+</html>
